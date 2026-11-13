@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SizeOnce — Universal Size Profile for Fashion</title>
+  <meta name="description" content="One body measurement profile. Accurate sizes across every brand. Stop ordering 3 sizes and returning 2.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white antialiased">
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="SizeOnce Home">
+        <svg class="logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Stylized minimal tee / sizing mark -->
+          <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+        </svg>
+        <span class="logo-text">SIZE<span class="logo-bold">ONCE</span></span>
+        <span class="logo-pill">B2B ENGINE</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#universal-profile" class="nav-link">Profile</a>
+        <a href="#interactive-demo" class="nav-link">Live Demo</a>
+        <a href="#matching-engine" class="nav-link">Engine</a>
+        <a href="#product-page-mock" class="nav-link">Integration</a>
+        <a href="#business-model" class="nav-link">B2B Model</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#cta-section" class="btn-primary-sm">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO (THE PROBLEM) -->
+    <section class="section hero-section" id="hero">
+      <div class="section-container hero-container">
+        
+        <div class="hero-top-badge reveal">
+          <span class="micro-label">THE FASHION SIZING DILEMMA</span>
+        </div>
+
+        <h1 class="hero-headline reveal">
+          <span class="hero-accent">Medium</span> here. 
+          <span class="hero-accent">Large</span> there. 
+          <span class="hero-accent">Small</span> everywhere else.
+        </h1>
+
+        <p class="hero-subtext reveal">
+          <span class="hero-accent-text">Same person.</span> Different size at every brand. Shoppers order 3 sizes and return 2 — costing billions in logistics and friction.
+        </p>
+
+        <!-- Three Brand Mismatched Size Chips -->
+        <div class="hero-mismatch-stage reveal">
+          <div class="mismatch-label-row">
+            <span class="micro-label">ACTUAL REAL-WORLD SIZING REALITY</span>
+            <span class="micro-label">SAME BODY MEASUREMENT (CHEST 96CM)</span>
+          </div>
+
+          <div class="mismatch-chips-grid">
+            <div class="mismatch-chip">
+              <div class="chip-brand">
+                <svg class="thin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                  <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+                </svg>
+                <span>ZARA</span>
+              </div>
+              <div class="chip-size-wrapper">
+                <span class="chip-size-letter">M</span>
+              </div>
+              <span class="chip-note">European Tailored Fit</span>
+            </div>
+
+            <div class="mismatch-chip">
+              <div class="chip-brand">
+                <svg class="thin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                  <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+                </svg>
+                <span>H&amp;M</span>
+              </div>
+              <div class="chip-size-wrapper">
+                <span class="chip-size-letter">L</span>
+              </div>
+              <span class="chip-note">Snug Shoulder Block</span>
+            </div>
+
+            <div class="mismatch-chip">
+              <div class="chip-brand">
+                <svg class="thin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                  <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+                </svg>
+                <span>BRAND C</span>
+              </div>
+              <div class="chip-size-wrapper">
+                <span class="chip-size-letter">S</span>
+              </div>
+              <span class="chip-note">Relaxed Oversized Block</span>
+            </div>
+          </div>
+
+          <!-- The Return Loop Diagram -->
+          <div class="return-loop-banner">
+            <div class="return-loop-item">
+              <svg class="thin-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M12 8V16M8 12L12 16L16 12"/>
+              </svg>
+              <span>Order 3 sizes to fit once</span>
+            </div>
+            <div class="return-loop-arrow">→</div>
+            <div class="return-loop-item highlight-red">
+              <svg class="thin-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <path d="M12 12V22"/>
+                <path d="M12 12L4.5 7.5"/>
+                <path d="M12 12L19.5 7.5"/>
+              </svg>
+              <span>Return 2 items backward</span>
+            </div>
+            <div class="return-loop-arrow">→</div>
+            <div class="return-loop-item">
+              <span class="pill-fix">SizeOnce fixes this</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero CTA -->
+        <div class="hero-cta-wrapper reveal">
+          <a href="#interactive-demo" class="btn-hero-cta">
+            <span>See how it works</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+          <span class="hero-cta-sub">Interactive 4-point measurement demo below</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: YOUR UNIVERSAL SIZE PROFILE -->
+    <section class="section" id="universal-profile">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">STANDARDIZED ANATOMICAL DATA</span>
+          <h2 class="section-title">YOUR UNIVERSAL SIZE PROFILE</h2>
+          <p class="section-subtitle">
+            One biometric reference. Encrypted and owned by the shopper. Translated instantly to every garment blueprint in the world.
+          </p>
+        </div>
+
+        <div class="profile-showcase-grid reveal">
+          
+          <!-- Left: Line-art Body Silhouette with Measurement Markers -->
+          <div class="card silhouette-card">
+            <div class="card-header-micro">
+              <span class="micro-label">ANATOMICAL REFERENCE MODEL</span>
+              <span class="status-indicator-live">ACTIVE CALIBRATION</span>
+            </div>
+
+            <div class="silhouette-visual-wrapper">
+              <!-- SVG Silhouette -->
+              <svg class="body-silhouette-svg" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Body silhouette line art">
+                <defs>
+                  <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                  </filter>
+                </defs>
+
+                <!-- Caliper / Height Ruler Background Line -->
+                <line x1="38" y1="40" x2="38" y2="460" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="2 3"/>
+                <line x1="32" y1="40" x2="44" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+                <line x1="32" y1="460" x2="44" y2="460" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+                
+                <!-- Body Silhouette Line Art -->
+                <g class="silhouette-outline" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Head -->
+                  <path d="M150 42 C138 42, 134 54, 134 70 C134 88, 140 102, 150 102 C160 102, 166 88, 166 70 C166 54, 162 42, 150 42 Z"/>
+                  <!-- Neck -->
+                  <path d="M143 102 L143 115 M157 102 L157 115"/>
+                  <!-- Shoulders & Torso -->
+                  <path d="M143 115 C130 118, 102 125, 96 138 C90 152, 85 188, 80 230 C76 265, 74 278, 69 288 C65 295, 59 300, 56 304 C59 306, 65 304, 70 298 C75 292, 82 250, 88 210 C94 175, 98 165, 104 165 C110 165, 114 185, 115 220 C116 250, 115 270, 112 300 C110 320, 107 340, 104 365 C101 390, 96 425, 94 455 C93 460, 98 462, 104 460 C110 458, 118 435, 122 395 C126 360, 128 330, 134 300 C138 280, 145 280, 150 280 C155 280, 162 280, 166 300 C172 330, 174 360, 178 395 C182 435, 190 458, 196 460 C202 462, 207 460, 206 455 C204 425, 199 390, 196 365 C193 340, 190 320, 188 300 C185 270, 184 250, 185 220 C186 185, 190 165, 196 165 C202 165, 206 175, 212 210 C218 250, 225 292, 230 298 C235 304, 241 306, 244 304 C241 300, 235 295, 231 288 C226 278, 224 265, 220 230 C215 188, 210 152, 204 138 C198 125, 170 118, 157 115"/>
+                </g>
+
+                <!-- Interactive Anatomical Highlights & Markers -->
+                <!-- 1. Height Caliper Indicator -->
+                <g id="marker-height" class="geo-marker">
+                  <line x1="38" y1="42" x2="38" y2="458" stroke="#FFFFFF" stroke-width="1.75"/>
+                  <circle cx="38" cy="250" r="3" fill="#FFFFFF"/>
+                  <text id="marker-height-text" x="24" y="254" fill="#FFFFFF" font-size="10" font-family="'Geist', sans-serif" text-anchor="end" letter-spacing="1">170 CM</text>
+                </g>
+
+                <!-- 2. Shoulders Span Marker -->
+                <g id="marker-shoulders" class="geo-marker">
+                  <line x1="96" y1="138" x2="204" y2="138" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="96" cy="138" r="2.5" fill="#FFFFFF"/>
+                  <circle cx="204" cy="138" r="2.5" fill="#FFFFFF"/>
+                  <text id="marker-shoulders-text" x="150" y="130" fill="#FFFFFF" font-size="9" font-family="'Geist', sans-serif" text-anchor="middle" letter-spacing="1">SHOULDERS 44 CM</text>
+                </g>
+
+                <!-- 3. Chest Contour Marker -->
+                <g id="marker-chest" class="geo-marker">
+                  <path d="M102 178 C115 186, 185 186, 198 178" stroke="#FFFFFF" stroke-width="2"/>
+                  <circle cx="102" cy="178" r="2.5" fill="#FFFFFF"/>
+                  <circle cx="198" cy="178" r="2.5" fill="#FFFFFF"/>
+                  <text id="marker-chest-text" x="215" y="181" fill="#FFFFFF" font-size="9" font-family="'Geist', sans-serif" letter-spacing="1">CHEST 96 CM</text>
+                </g>
+
+                <!-- 4. Waist Contour Marker -->
+                <g id="marker-waist" class="geo-marker">
+                  <path d="M112 240 C122 246, 178 246, 188 240" stroke="#FFFFFF" stroke-width="2"/>
+                  <circle cx="112" cy="240" r="2.5" fill="#FFFFFF"/>
+                  <circle cx="188" cy="240" r="2.5" fill="#FFFFFF"/>
+                  <text id="marker-waist-text" x="215" y="243" fill="#FFFFFF" font-size="9" font-family="'Geist', sans-serif" letter-spacing="1">WAIST 82 CM</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="silhouette-meta-bar">
+              <span class="micro-label">KEY POINTS: 4 HARMONIC ANCHORS</span>
+              <span class="micro-label">ACCURACY: 99.4%</span>
+            </div>
+          </div>
+
+          <!-- Right: Sleek Mobile Phone Mockup "Size Profile" -->
+          <div class="card phone-card">
+            <div class="card-header-micro">
+              <span class="micro-label">CLIENT-SIDE APPLICATION</span>
+              <span class="micro-label">SIZE ONCE APP</span>
+            </div>
+
+            <div class="phone-mockup-outer">
+              <div class="phone-speaker-notch"></div>
+              
+              <div class="phone-screen">
+                <div class="phone-screen-header">
+                  <div class="phone-user-badge">
+                    <svg class="thin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span>ANONYMOUS ID #8491</span>
+                  </div>
+                  <span class="badge-verified">✓ ENCRYPTED</span>
+                </div>
+
+                <div class="phone-title-block">
+                  <span class="phone-micro-tag">UNIVERSAL PROFILE</span>
+                  <h3 class="phone-main-title">Body Blueprint</h3>
+                  <p class="phone-meta-text">Synchronized with 42+ partner fashion brands</p>
+                </div>
+
+                <!-- Profile Attributes List -->
+                <div class="phone-metrics-stack">
+                  <div class="phone-metric-row">
+                    <div class="metric-info">
+                      <span class="metric-name">Height</span>
+                      <span class="metric-desc">Standing vertical caliper</span>
+                    </div>
+                    <div class="metric-val-pill">
+                      <span id="phone-val-height">170</span>
+                      <span class="metric-unit">cm</span>
+                    </div>
+                  </div>
+
+                  <div class="phone-metric-row">
+                    <div class="metric-info">
+                      <span class="metric-name">Chest</span>
+                      <span class="metric-desc">Widest apex circumference</span>
+                    </div>
+                    <div class="metric-val-pill">
+                      <span id="phone-val-chest">96</span>
+                      <span class="metric-unit">cm</span>
+                    </div>
+                  </div>
+
+                  <div class="phone-metric-row">
+                    <div class="metric-info">
+                      <span class="metric-name">Waist</span>
+                      <span class="metric-desc">Natural narrowest torso point</span>
+                    </div>
+                    <div class="metric-val-pill">
+                      <span id="phone-val-waist">82</span>
+                      <span class="metric-unit">cm</span>
+                    </div>
+                  </div>
+
+                  <div class="phone-metric-row">
+                    <div class="metric-info">
+                      <span class="metric-name">Shoulders</span>
+                      <span class="metric-desc">Bi-acromial spine bone tip</span>
+                    </div>
+                    <div class="metric-val-pill">
+                      <span id="phone-val-shoulders">44</span>
+                      <span class="metric-unit">cm</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Connected Brands Bar -->
+                <div class="phone-connected-bar">
+                  <span class="micro-label">CONNECTED ECOSYSTEM</span>
+                  <div class="connected-brand-chips" id="phone-connected-brands">
+                    <span class="pill-brand">ZARA</span>
+                    <span class="pill-brand">H&amp;M</span>
+                    <span class="pill-brand">BRAND C</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Card Bottom Anchor -->
+            <div class="card-footer-anchor">
+              <span class="micro-label">CORE ARCHITECTURE PRINCIPLE</span>
+              <p class="footer-highlight-text">ONE PROFILE. MULTIPLE BRANDS.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: ENTER IT ONCE (INTERACTIVE MINI-DEMO) -->
+    <section class="section" id="interactive-demo">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">INTERACTIVE ENGINE DEMO</span>
+          <h2 class="section-title">ENTER IT ONCE.</h2>
+          <p class="section-subtitle">
+            Calibrate your four primary body metrics once. Watch the anatomical mannequin highlight in real-time, while our size matching engine translates your numbers across brand size charts below.
+          </p>
+        </div>
+
+        <!-- Presets Bar & Units Switcher -->
+        <div class="demo-controls-bar reveal">
+          <div class="presets-group">
+            <span class="micro-label">SAMPLE PRESETS:</span>
+            <button type="button" class="preset-btn active" data-preset="sample">Sample (170/96/82/44)</button>
+            <button type="button" class="preset-btn" data-preset="petite">Petite Fit (162/88/74/40)</button>
+            <button type="button" class="preset-btn" data-preset="athletic">Athletic (178/102/86/47)</button>
+            <button type="button" class="preset-btn" data-preset="tall-broad">Broad &amp; Tall (186/110/94/51)</button>
+          </div>
+
+          <div class="unit-toggle-group" role="group" aria-label="Measurement Unit Switcher">
+            <button type="button" class="unit-toggle-btn active" id="unit-cm">CM</button>
+            <button type="button" class="unit-toggle-btn" id="unit-in">INCHES</button>
+          </div>
+        </div>
+
+        <!-- Interactive Form + Live Responsive Silhouette -->
+        <div class="interactive-stage-card card reveal">
+          
+          <!-- Left: Input Controls Form -->
+          <div class="interactive-inputs-pane">
+            <div class="pane-header">
+              <span class="micro-label">USER BODY MEASUREMENTS</span>
+              <span class="fictional-note">Fictional sample measurements</span>
+            </div>
+
+            <form id="size-profile-form" class="measurement-form" onsubmit="event.preventDefault();">
+              
+              <!-- 1. Height -->
+              <div class="input-field-group" data-target="height">
+                <div class="field-label-row">
+                  <label for="input-height" class="field-title">
+                    <span class="field-name">Height</span>
+                    <span class="field-desc">Vertical full body length</span>
+                  </label>
+                  <div class="field-value-display">
+                    <input type="number" id="input-height" class="number-input" min="140" max="215" value="170" aria-label="Height">
+                    <span class="unit-label">cm</span>
+                    <span class="check-badge active" title="Calibrated">✓</span>
+                  </div>
+                </div>
+                <div class="slider-wrapper">
+                  <input type="range" id="slider-height" class="range-slider" min="140" max="215" value="170" aria-label="Height slider">
+                </div>
+                <div class="slider-ticks">
+                  <span>140 cm</span>
+                  <span>175 cm</span>
+                  <span>210 cm</span>
+                </div>
+              </div>
+
+              <!-- 2. Chest -->
+              <div class="input-field-group" data-target="chest">
+                <div class="field-label-row">
+                  <label for="input-chest" class="field-title">
+                    <span class="field-name">Chest Circumference</span>
+                    <span class="field-desc">Around fullest point of chest</span>
+                  </label>
+                  <div class="field-value-display">
+                    <input type="number" id="input-chest" class="number-input" min="70" max="140" value="96" aria-label="Chest">
+                    <span class="unit-label">cm</span>
+                    <span class="check-badge active" title="Calibrated">✓</span>
+                  </div>
+                </div>
+                <div class="slider-wrapper">
+                  <input type="range" id="slider-chest" class="range-slider" min="70" max="140" value="96" aria-label="Chest slider">
+                </div>
+                <div class="slider-ticks">
+                  <span>70 cm</span>
+                  <span>105 cm</span>
+                  <span>140 cm</span>
+                </div>
+              </div>
+
+              <!-- 3. Waist -->
+              <div class="input-field-group" data-target="waist">
+                <div class="field-label-row">
+                  <label for="input-waist" class="field-title">
+                    <span class="field-name">Waist Circumference</span>
+                    <span class="field-desc">Natural waistline above navel</span>
+                  </label>
+                  <div class="field-value-display">
+                    <input type="number" id="input-waist" class="number-input" min="60" max="130" value="82" aria-label="Waist">
+                    <span class="unit-label">cm</span>
+                    <span class="check-badge active" title="Calibrated">✓</span>
+                  </div>
+                </div>
+                <div class="slider-wrapper">
+                  <input type="range" id="slider-waist" class="range-slider" min="60" max="130" value="82" aria-label="Waist slider">
+                </div>
+                <div class="slider-ticks">
+                  <span>60 cm</span>
+                  <span>95 cm</span>
+                  <span>130 cm</span>
+                </div>
+              </div>
+
+              <!-- 4. Shoulders -->
+              <div class="input-field-group" data-target="shoulders">
+                <div class="field-label-row">
+                  <label for="input-shoulders" class="field-title">
+                    <span class="field-name">Shoulder Width</span>
+                    <span class="field-desc">Tip-to-tip across back</span>
+                  </label>
+                  <div class="field-value-display">
+                    <input type="number" id="input-shoulders" class="number-input" min="35" max="65" value="44" aria-label="Shoulders">
+                    <span class="unit-label">cm</span>
+                    <span class="check-badge active" title="Calibrated">✓</span>
+                  </div>
+                </div>
+                <div class="slider-wrapper">
+                  <input type="range" id="slider-shoulders" class="range-slider" min="35" max="65" value="44" aria-label="Shoulders slider">
+                </div>
+                <div class="slider-ticks">
+                  <span>35 cm</span>
+                  <span>50 cm</span>
+                  <span>65 cm</span>
+                </div>
+              </div>
+
+            </form>
+
+            <div class="pane-footer-status">
+              <span class="pulse-dot"></span>
+              <span class="status-text">All 4 metrics active • Size matching engine synchronized</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive SVG Silhouette with Reactive Highlights -->
+          <div class="interactive-mannequin-pane">
+            <div class="mannequin-header">
+              <span class="micro-label">ACTIVE BIOMETRIC MAP</span>
+              <span class="active-part-badge" id="active-part-label">All Points Calibrated</span>
+            </div>
+
+            <div class="mannequin-viewport">
+              <svg id="interactive-body-svg" class="reactive-silhouette-svg" viewBox="0 0 320 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid background subtle lines -->
+                <defs>
+                  <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5"/>
+                  </pattern>
+                  <filter id="glow-highlight" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FFFFFF" flood-opacity="0.8"/>
+                  </filter>
+                </defs>
+                <rect width="320" height="480" fill="url(#smallGrid)" />
+
+                <!-- Height Caliper Guide -->
+                <g id="svg-part-height" class="part-group">
+                  <line x1="34" y1="45" x2="34" y2="445" stroke="rgba(255,255,255,0.25)" stroke-width="1.25" stroke-dasharray="3 3"/>
+                  <line x1="26" y1="45" x2="42" y2="45" stroke="#FFFFFF" stroke-width="1.5"/>
+                  <line x1="26" y1="445" x2="42" y2="445" stroke="#FFFFFF" stroke-width="1.5"/>
+                  <rect id="svg-height-cursor" x="22" y="235" width="24" height="18" rx="3" fill="#161616" stroke="#FFFFFF" stroke-width="1"/>
+                  <text id="svg-height-text" x="34" y="247" fill="#FFFFFF" font-size="8" font-family="'Geist', sans-serif" font-weight="600" text-anchor="middle">170</text>
+                </g>
+
+                <!-- Base Anatomy Paths -->
+                <g class="base-anatomy" stroke="rgba(255,255,255,0.3)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Head -->
+                  <ellipse cx="160" cy="72" rx="16" ry="24" />
+                  <!-- Neck -->
+                  <line x1="154" y1="96" x2="154" y2="108"/>
+                  <line x1="166" y1="96" x2="166" y2="108"/>
+                  <!-- Torso and Limbs -->
+                  <path d="M 154 108 C 140 112 110 120 102 134 C 95 147 90 185 85 225 C 80 260 76 275 72 285 C 68 293 62 298 58 302"/>
+                  <path d="M 166 108 C 180 112 210 120 218 134 C 225 147 230 185 235 225 C 240 260 244 275 248 285 C 252 293 258 298 262 302"/>
+                  <!-- Inner arms & Torso sides -->
+                  <path d="M 72 295 C 77 285 82 248 88 210 C 94 175 99 166 106 166 C 112 166 116 186 118 220 C 120 250 119 270 116 300 C 113 325 110 348 107 375 C 103 405 98 435 96 450 C 102 452 110 445 116 415 C 122 385 125 350 131 310 C 136 280 148 280 160 280 C 172 280 184 280 189 310 C 195 350 198 385 204 415 C 210 445 218 452 224 450 C 222 435 217 405 213 375 C 210 348 207 325 204 300 C 201 270 200 250 202 220 C 204 186 208 166 214 166 C 221 166 226 175 232 210 C 238 248 243 285 248 295"/>
+                </g>
+
+                <!-- ACTIVE HIGHLIGHTS (DYNAMICALLY TOGGLED) -->
+                <!-- 1. Shoulder Span Reactive Highlight -->
+                <g id="svg-part-shoulders" class="part-highlight-group">
+                  <line id="svg-shoulder-line" x1="102" y1="134" x2="218" y2="134" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <circle cx="102" cy="134" r="4" fill="#FFFFFF"/>
+                  <circle cx="218" cy="134" r="4" fill="#FFFFFF"/>
+                  <rect x="136" y="122" width="48" height="16" rx="3" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="1"/>
+                  <text id="svg-shoulder-text" x="160" y="133" fill="#FFFFFF" font-size="9" font-family="'Geist', sans-serif" font-weight="600" text-anchor="middle">44 cm</text>
+                </g>
+
+                <!-- 2. Chest Reactive Highlight Band -->
+                <g id="svg-part-chest" class="part-highlight-group active">
+                  <ellipse cx="160" cy="178" rx="46" ry="12" stroke="#FFFFFF" stroke-width="2.5" fill="rgba(255,255,255,0.08)"/>
+                  <line x1="114" y1="178" x2="206" y2="178" stroke="#FFFFFF" stroke-width="1.25" stroke-dasharray="2 2"/>
+                  <rect x="214" y="170" width="56" height="16" rx="3" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="1"/>
+                  <text id="svg-chest-text" x="242" y="181" fill="#FFFFFF" font-size="9" font-family="'Geist', sans-serif" font-weight="600" text-anchor="middle">96 cm</text>
+                </g>
+
+                <!-- 3. Waist Reactive Highlight Band -->
+                <g id="svg-part-waist" class="part-highlight-group">
+                  <ellipse cx="160" cy="238" rx="36" ry="10" stroke="#FFFFFF" stroke-width="2.5" fill="rgba(255,255,255,0.08)"/>
+                  <line x1="124" y1="238" x2="196" y2="238" stroke="#FFFFFF" stroke-width="1.25" stroke-dasharray="2 2"/>
+                  <rect x="204" y="230" width="56" height="16" rx="3" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="1"/>
+                  <text id="svg-waist-text" x="232" y="241" fill="#FFFFFF" font-size="9" font-family="'Geist', sans-serif" font-weight="600" text-anchor="middle">82 cm</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="mannequin-footer-info">
+              <span class="micro-label">INTERACTIVE PROMPT:</span>
+              <span class="subtle-guide-text">Hover or adjust sliders to inspect each anatomical marker</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: SIZE MATCHING ENGINE (DIAGRAM) -->
+    <section class="section" id="matching-engine">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">PROPRIETARY TRANSLATION LAYER</span>
+          <h2 class="section-title">SIZE MATCHING ENGINE</h2>
+          <p class="section-subtitle">
+            How raw body millimeters transform into precise apparel SKU sizes. Continuous mathematical curve fitting against individual brand pattern blocks.
+          </p>
+        </div>
+
+        <!-- Matching Engine Pipeline Diagram -->
+        <div class="engine-diagram-card card reveal">
+          
+          <!-- Top Row: 4 Measurement Input Tiles -->
+          <div class="engine-inputs-row">
+            <div class="engine-tile" id="tile-height">
+              <span class="tile-label">HEIGHT</span>
+              <span class="tile-val"><span id="engine-tile-height">170</span> cm</span>
+              <span class="tile-status">✓ INGESTED</span>
+            </div>
+            
+            <div class="engine-tile" id="tile-chest">
+              <span class="tile-label">CHEST</span>
+              <span class="tile-val"><span id="engine-tile-chest">96</span> cm</span>
+              <span class="tile-status">✓ INGESTED</span>
+            </div>
+
+            <div class="engine-tile" id="tile-waist">
+              <span class="tile-label">WAIST</span>
+              <span class="tile-val"><span id="engine-tile-waist">82</span> cm</span>
+              <span class="tile-status">✓ INGESTED</span>
+            </div>
+
+            <div class="engine-tile" id="tile-shoulders">
+              <span class="tile-label">SHOULDERS</span>
+              <span class="tile-val"><span id="engine-tile-shoulders">44</span> cm</span>
+              <span class="tile-status">✓ INGESTED</span>
+            </div>
+          </div>
+
+          <!-- Connector Lines Down to Engine -->
+          <div class="connector-bus-down">
+            <svg class="connector-svg" viewBox="0 0 800 60" preserveAspectRatio="none">
+              <!-- Animated signals along paths -->
+              <path d="M 100 0 L 100 30 L 400 30 L 400 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M 300 0 L 300 30 L 400 30 L 400 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M 500 0 L 500 30 L 400 30 L 400 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M 700 0 L 700 30 L 400 30 L 400 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              
+              <!-- Active pulsing center bus -->
+              <line x1="400" y1="20" x2="400" y2="60" stroke="#FFFFFF" stroke-width="2"/>
+            </svg>
+            <div class="stream-dot dot-1"></div>
+            <div class="stream-dot dot-2"></div>
+            <div class="stream-dot dot-3"></div>
+            <div class="stream-dot dot-4"></div>
+          </div>
+
+          <!-- Central Engine Node -->
+          <div class="engine-core-node">
+            <div class="core-node-inner">
+              <div class="core-header-row">
+                <span class="core-chip">B2B INFERENCE LAYER</span>
+                <span class="core-latency">&lt; 14ms LATENCY</span>
+              </div>
+              <h3 class="core-title">SIZE MATCHING ENGINE</h3>
+              <p class="core-desc">Multi-dimensional matrix normalizer • Pattern tolerance &amp; fabric drape algorithm</p>
+            </div>
+          </div>
+
+          <!-- Connector Lines Branching Out to Brands -->
+          <div class="connector-bus-up">
+            <svg class="connector-svg" viewBox="0 0 800 60" preserveAspectRatio="none">
+              <path d="M 400 0 L 400 30 L 140 30 L 140 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M 400 0 L 400 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+              <path d="M 400 0 L 400 30 L 660 30 L 660 60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+            </svg>
+            <div class="stream-dot-out dot-out-left"></div>
+            <div class="stream-dot-out dot-out-mid"></div>
+            <div class="stream-dot-out dot-out-right"></div>
+          </div>
+
+          <!-- Bottom Row: 3 Brand Size Charts -->
+          <div class="engine-charts-grid">
+            
+            <!-- Brand A Size Chart -->
+            <div class="brand-chart-card" id="chart-brand-a">
+              <div class="chart-header">
+                <div class="chart-brand-title">
+                  <span class="brand-name">BRAND A</span>
+                  <span class="brand-spec">(ZARA Block)</span>
+                </div>
+                <span class="recommended-badge" id="chart-rec-a">MATCH: M</span>
+              </div>
+              <div class="size-table-wrapper">
+                <table class="size-table" aria-label="Brand A Size Chart">
+                  <thead>
+                    <tr>
+                      <th>SIZE</th>
+                      <th>CHEST</th>
+                      <th>WAIST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="size-row" data-size="S">
+                      <td><span class="size-cell">S</span></td>
+                      <td>88–93</td>
+                      <td>74–79</td>
+                    </tr>
+                    <tr class="size-row active-matched-row" data-size="M">
+                      <td><span class="size-cell matched">M</span></td>
+                      <td>94–99</td>
+                      <td>80–85</td>
+                    </tr>
+                    <tr class="size-row" data-size="L">
+                      <td><span class="size-cell">L</span></td>
+                      <td>100–106</td>
+                      <td>86–92</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="chart-footer-note">Tailored European standard cut</div>
+            </div>
+
+            <!-- Brand B Size Chart -->
+            <div class="brand-chart-card" id="chart-brand-b">
+              <div class="chart-header">
+                <div class="chart-brand-title">
+                  <span class="brand-name">BRAND B</span>
+                  <span class="brand-spec">(H&amp;M Block)</span>
+                </div>
+                <span class="recommended-badge" id="chart-rec-b">MATCH: L</span>
+              </div>
+              <div class="size-table-wrapper">
+                <table class="size-table" aria-label="Brand B Size Chart">
+                  <thead>
+                    <tr>
+                      <th>SIZE</th>
+                      <th>CHEST</th>
+                      <th>WAIST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="size-row" data-size="S">
+                      <td><span class="size-cell">S</span></td>
+                      <td>84–90</td>
+                      <td>72–77</td>
+                    </tr>
+                    <tr class="size-row" data-size="M">
+                      <td><span class="size-cell">M</span></td>
+                      <td>91–95</td>
+                      <td>78–81</td>
+                    </tr>
+                    <tr class="size-row active-matched-row" data-size="L">
+                      <td><span class="size-cell matched">L</span></td>
+                      <td>96–103</td>
+                      <td>82–89</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="chart-footer-note">Snug chest gradient grading</div>
+            </div>
+
+            <!-- Brand C Size Chart -->
+            <div class="brand-chart-card" id="chart-brand-c">
+              <div class="chart-header">
+                <div class="chart-brand-title">
+                  <span class="brand-name">BRAND C</span>
+                  <span class="brand-spec">(Oversized Block)</span>
+                </div>
+                <span class="recommended-badge" id="chart-rec-c">MATCH: S</span>
+              </div>
+              <div class="size-table-wrapper">
+                <table class="size-table" aria-label="Brand C Size Chart">
+                  <thead>
+                    <tr>
+                      <th>SIZE</th>
+                      <th>CHEST</th>
+                      <th>WAIST</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="size-row active-matched-row" data-size="S">
+                      <td><span class="size-cell matched">S</span></td>
+                      <td>92–98</td>
+                      <td>78–84</td>
+                    </tr>
+                    <tr class="size-row" data-size="M">
+                      <td><span class="size-cell">M</span></td>
+                      <td>99–106</td>
+                      <td>85–91</td>
+                    </tr>
+                    <tr class="size-row" data-size="L">
+                      <td><span class="size-cell">L</span></td>
+                      <td>107–114</td>
+                      <td>92–98</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="chart-footer-note">Generous boxy silhouette fit</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: ONE BODY, MANY SIZES -->
+    <section class="section" id="one-body-many-sizes">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">CONVERTED BRAND RECOMMENDATIONS</span>
+          <h2 class="section-title">ONE BODY, MANY SIZES.</h2>
+          <p class="section-subtitle">
+            Based on your active inputs above, here is your calculated size output across brand retail environments. Zero guesswork.
+          </p>
+        </div>
+
+        <!-- Interactive Add Brands Control Panel -->
+        <div class="card brand-adder-card reveal">
+          <div class="brand-adder-header">
+            <div class="adder-title-group">
+              <span class="micro-label">CUSTOMIZE YOUR PROFILE</span>
+              <h3 class="adder-heading">Add Brands You Shop At</h3>
+              <p class="adder-desc">The universal profile translates your body measurements to any brand's pattern block. Pick popular fashion labels or type your own.</p>
+            </div>
+            <div class="brand-counter-badge" id="active-brand-counter">
+              <span class="pulse-dot"></span>
+              <span id="brand-count-text">3 BRANDS CONNECTED</span>
+            </div>
+          </div>
+
+          <!-- Amazon Affiliate Integration & Settings Bar -->
+          <div class="affiliate-config-bar">
+            <div class="affiliate-config-info">
+              <span class="micro-label">AMAZON ASSOCIATES MONETIZATION</span>
+              <span class="affiliate-tag-display">Active Tracking Tag: <strong id="display-amazon-tag">sizeonce-20</strong></span>
+            </div>
+            <div class="affiliate-config-inputs">
+              <input type="text" id="input-amazon-tag" class="amazon-tag-input" placeholder="Your Associate Tag (e.g. tag-20)" value="sizeonce-20" aria-label="Amazon Associate Tag">
+              <select id="select-amazon-domain" class="amazon-domain-select" aria-label="Amazon Marketplace Domain">
+                <option value="amazon.in">Amazon India (amazon.in)</option>
+                <option value="amazon.com">Amazon Global (amazon.com)</option>
+                <option value="amazon.co.uk">Amazon UK (amazon.co.uk)</option>
+                <option value="amazon.de">Amazon EU (amazon.de)</option>
+              </select>
+              <button type="button" id="btn-save-amazon-tag" class="btn-save-tag">Save Tag</button>
+            </div>
+          </div>
+
+          <!-- Quick-add Popular Suggestions -->
+          <div class="quick-add-container">
+            <span class="micro-label">POPULAR SUGGESTIONS (CLICK TO ADD / RE-ADD):</span>
+            <div class="quick-add-chips" id="quick-add-chips">
+              <button type="button" class="quick-add-chip is-added" data-brand="ZARA" data-block="tailored">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>ZARA</span>
+              </button>
+              <button type="button" class="quick-add-chip is-added" data-brand="H&M" data-block="athletic">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>H&amp;M</span>
+              </button>
+              <button type="button" class="quick-add-chip is-added" data-brand="BRAND C" data-block="oversized">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>BRAND C</span>
+              </button>
+              <button type="button" class="quick-add-chip" data-brand="UNIQLO" data-block="oversized">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>UNIQLO</span>
+              </button>
+              <button type="button" class="quick-add-chip" data-brand="NIKE" data-block="athletic">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>NIKE</span>
+              </button>
+              <button type="button" class="quick-add-chip" data-brand="LEVI'S" data-block="classic">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>LEVI'S</span>
+              </button>
+              <button type="button" class="quick-add-chip" data-brand="MANGO" data-block="tailored">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>MANGO</span>
+              </button>
+              <button type="button" class="quick-add-chip" data-brand="ASOS" data-block="tailored">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>ASOS</span>
+              </button>
+              <button type="button" class="quick-add-chip" data-brand="COS" data-block="oversized">
+                <svg class="thin-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>COS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Custom Brand Input Form -->
+          <form id="custom-brand-form" class="custom-brand-form">
+            <div class="custom-brand-row">
+              <div class="custom-brand-input-wrap">
+                <input type="text" id="custom-brand-input" class="custom-brand-input" placeholder="Type custom brand (e.g. Ralph Lauren, Lululemon, Gap...)" aria-label="Brand Name" required>
+              </div>
+              <div class="custom-brand-select-wrap">
+                <select id="custom-brand-block" class="custom-brand-select" aria-label="Fit Profile / Cut Block">
+                  <option value="tailored">European Tailored Cut</option>
+                  <option value="athletic">Fitted Athletic Cut</option>
+                  <option value="oversized">Relaxed / Oversized Cut</option>
+                  <option value="classic">Generous Classic Cut</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-add-brand">
+                <svg class="thin-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add Brand</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Stacked Brand Recommendation Cards -->
+        <div class="stacked-brands-wrapper" id="stacked-brands-list">
+          
+          <!-- Card 1: ZARA -->
+          <div class="card brand-match-card reveal" id="card-match-zara">
+            <div class="brand-match-left">
+              <div class="brand-logo-block">
+                <div class="tee-icon-box">
+                  <svg class="thin-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                    <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+                  </svg>
+                </div>
+                <div class="brand-name-group">
+                  <h3 class="brand-heading">ZARA</h3>
+                  <span class="brand-spec-label">European Contemporary Block</span>
+                </div>
+              </div>
+
+              <div class="match-rationale">
+                <span class="micro-label">ENGINE ANALYSIS</span>
+                <p class="rationale-text" id="rationale-zara">
+                  Chest <span class="val-bold">96 cm</span> &amp; Waist <span class="val-bold">82 cm</span> align squarely in Zara Medium (94–99 cm) for a standard structured drape.
+                </p>
+              </div>
+            </div>
+
+            <div class="brand-match-right">
+              <span class="micro-label">RECOMMENDED SIZE</span>
+              <div class="size-letter-box" id="size-letter-zara">M</div>
+              <span class="match-confidence">99.1% Confidence</span>
+            </div>
+          </div>
+
+          <!-- Card 2: H&M -->
+          <div class="card brand-match-card reveal" id="card-match-hm">
+            <div class="brand-match-left">
+              <div class="brand-logo-block">
+                <div class="tee-icon-box">
+                  <svg class="thin-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                    <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+                  </svg>
+                </div>
+                <div class="brand-name-group">
+                  <h3 class="brand-heading">H&amp;M</h3>
+                  <span class="brand-spec-label">Fitted Athletic Cut</span>
+                </div>
+              </div>
+
+              <div class="match-rationale">
+                <span class="micro-label">ENGINE ANALYSIS</span>
+                <p class="rationale-text" id="rationale-hm">
+                  H&amp;M shoulder grading runs narrower. Shoulders <span class="val-bold">44 cm</span> and Chest <span class="val-bold">96 cm</span> exceed Medium boundary (95 cm max) — recommending Large for movement.
+                </p>
+              </div>
+            </div>
+
+            <div class="brand-match-right">
+              <span class="micro-label">RECOMMENDED SIZE</span>
+              <div class="size-letter-box" id="size-letter-hm">L</div>
+              <span class="match-confidence">98.4% Confidence</span>
+            </div>
+          </div>
+
+          <!-- Card 3: BRAND C -->
+          <div class="card brand-match-card reveal" id="card-match-brandc">
+            <div class="brand-match-left">
+              <div class="brand-logo-block">
+                <div class="tee-icon-box">
+                  <svg class="thin-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                    <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+                  </svg>
+                </div>
+                <div class="brand-name-group">
+                  <h3 class="brand-heading">BRAND C</h3>
+                  <span class="brand-spec-label">Relaxed Japanese / Oversized Block</span>
+                </div>
+              </div>
+
+              <div class="match-rationale">
+                <span class="micro-label">ENGINE ANALYSIS</span>
+                <p class="rationale-text" id="rationale-brandc">
+                  Brand C builds +8 cm garment ease into garments. Size Small accommodates up to 98 cm chest comfortably without excessive bunching.
+                </p>
+              </div>
+            </div>
+
+            <div class="brand-match-right">
+              <span class="micro-label">RECOMMENDED SIZE</span>
+              <div class="size-letter-box" id="size-letter-brandc">S</div>
+              <span class="match-confidence">99.7% Confidence</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footnote-block reveal">
+          <span class="micro-label">DISCLAIMER NOTE</span>
+          <p class="footnote-text">Illustrative examples, not actual brand size recommendations</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: INTEGRATED ON THE PRODUCT PAGE -->
+    <section class="section" id="product-page-mock">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">WHITE-LABEL PDP EMBED</span>
+          <h2 class="section-title">INTEGRATED ON THE PRODUCT PAGE</h2>
+          <p class="section-subtitle">
+            How SizeOnce looks inside a partner merchant's Shopify, Salesforce Commerce Cloud, or custom checkout flow. No popups, no sizing charts to decode.
+          </p>
+        </div>
+
+        <!-- Mock Ecommerce PDP Card -->
+        <div class="card pdp-mockup-card reveal">
+          <div class="pdp-browser-bar">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-address" id="pdp-browser-url">zara.com/products/essential-cotton-tee</div>
+            <div class="browser-badge">✓ SIZEONCE SDK ACTIVE</div>
+          </div>
+
+          <div class="pdp-layout-grid">
+            
+            <!-- Left: Minimalist Wireframe Tee Product Visual -->
+            <div class="pdp-image-stage">
+              <div class="tee-wireframe-visual">
+                <svg class="product-tee-svg" viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Collar & T-shirt Silhouette -->
+                  <path d="M 60 40 L 20 85 L 65 110 L 65 210 L 175 210 L 175 110 L 220 85 L 180 40 Z" stroke="rgba(255,255,255,0.7)"/>
+                  <path d="M 100 40 C 100 55, 140 55, 140 40" stroke="#FFFFFF" stroke-width="1.5"/>
+                  <!-- Subtle stitch lines -->
+                  <line x1="65" y1="205" x2="175" y2="205" stroke="rgba(255,255,255,0.2)" stroke-dasharray="2 3"/>
+                  <line x1="25" y1="83" x2="63" y2="105" stroke="rgba(255,255,255,0.2)" stroke-dasharray="2 3"/>
+                  <line x1="215" y1="83" x2="177" y2="105" stroke="rgba(255,255,255,0.2)" stroke-dasharray="2 3"/>
+                </svg>
+                <div class="tee-material-tag">100% HEAVYWEIGHT ORGANIC COTTON</div>
+              </div>
+            </div>
+
+            <!-- Right: Product Buy Box with Size Selector -->
+            <div class="pdp-details-stage">
+              
+              <!-- Store Simulation Switcher -->
+              <div class="pdp-store-switcher-bar">
+                <span class="micro-label">SIMULATE STORE INTEGRATION:</span>
+                <div class="store-chips-group" id="pdp-store-chips">
+                  <!-- Populated dynamically with active brands -->
+                </div>
+              </div>
+
+              <div class="pdp-brand-tag" id="pdp-brand-tag">ZARA OFFICIAL STORE</div>
+              <h3 class="pdp-product-title">Essential cotton tee</h3>
+              <div class="pdp-price-row">
+                <span class="pdp-price">₹ 1,499</span>
+                <span class="pdp-shipping">Free next-day dispatch</span>
+              </div>
+
+              <!-- Colorway Selector -->
+              <div class="pdp-color-row">
+                <span class="micro-label">COLOR: OBSIDIAN BLACK</span>
+                <div class="color-chips">
+                  <span class="color-chip active" style="background:#0D0D0D;" title="Obsidian Black"></span>
+                  <span class="color-chip" style="background:#262626;" title="Slate"></span>
+                  <span class="color-chip" style="background:#E5E5E5;" title="Chalk White"></span>
+                </div>
+              </div>
+
+              <!-- Size Selector Container -->
+              <div class="pdp-size-selector-block">
+                <div class="selector-header">
+                  <span class="micro-label">SELECT SIZE</span>
+                  <span class="auto-selected-note">Auto-selected from your profile</span>
+                </div>
+
+                <div class="size-chips-pills" id="pdp-size-chips">
+                  <button type="button" class="size-pill" data-size="XS">XS</button>
+                  <button type="button" class="size-pill" data-size="S">S</button>
+                  <button type="button" class="size-pill active-selected" data-size="M">M</button>
+                  <button type="button" class="size-pill" data-size="L">L</button>
+                  <button type="button" class="size-pill" data-size="XL">XL</button>
+                </div>
+              </div>
+
+              <!-- SIZEONCE RECOMMENDED SIZE BANNER -->
+              <div class="sizeonce-recommendation-banner" id="pdp-recommendation-banner">
+                <div class="banner-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="banner-content">
+                  <div class="banner-headline">
+                    YOUR RECOMMENDED SIZE: <span id="pdp-banner-size" class="banner-size-token">M</span>
+                  </div>
+                  <div class="banner-subtext">— from your universal size profile (Chest <span id="pdp-banner-chest">96</span> cm)</div>
+                </div>
+                <div class="banner-badge">CALIBRATED</div>
+              </div>
+
+              <!-- Action Button Mock -->
+              <div class="pdp-actions">
+                <button type="button" class="pdp-add-btn">
+                  <span>Add to Bag with Guaranteed Fit</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+
+                <!-- Amazon Affiliate Direct Outbound Button -->
+                <a id="pdp-amazon-affiliate-link" href="#" target="_blank" rel="noopener noreferrer sponsored" class="btn-pdp-amazon" title="Buy this apparel on Amazon with your size pre-selected">
+                  <svg class="thin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                  </svg>
+                  <span>Shop on Amazon in Size <strong id="pdp-affiliate-size">M</strong></span>
+                  <span class="affiliate-arrow-pill">↗</span>
+                </a>
+
+                <div class="pdp-assurance-line">
+                  <span>✓ Size-calibrated via profile</span>
+                  <span>•</span>
+                  <span>Direct Amazon fulfillment</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: BUSINESS MODEL FLOW -->
+    <section class="section" id="business-model">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">COMMERCIAL VALUE CHAIN</span>
+          <h2 class="section-title">BUSINESS MODEL FLOW</h2>
+          <p class="section-subtitle">
+            Fashion brands pay to integrate the size-recommendation technology (B2B), and customers get personalised size guidance for free.
+          </p>
+        </div>
+
+        <!-- Vertical Flow With Connectors -->
+        <div class="flow-container reveal">
+          
+          <!-- Node 1: Fashion Brands -->
+          <div class="card flow-node-card">
+            <div class="node-icon-circle">
+              <!-- Card / Rupee icon -->
+              <svg class="thin-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+                <!-- Rupee symbol inline -->
+                <path d="M7 14h5M7 16h4M7 14c2 0 3-1 3-2s-1-2-3-2H7M10 14l3 3"/>
+              </svg>
+            </div>
+            <div class="node-content">
+              <span class="micro-label">B2B INTEGRATION PARTNERS</span>
+              <h3 class="node-title">FASHION BRANDS</h3>
+              <p class="node-subtitle">Pays for the technology</p>
+              <div class="node-pills">
+                <span class="flow-pill">Shopify App</span>
+                <span class="flow-pill">Salesforce AppExchange</span>
+                <span class="flow-pill">Headless API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flow Down Connector 1 -->
+          <div class="flow-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Node 2: Size Recommendation Technology (HIGHLIGHTED SOLID WHITE BOX WITH BLACK TEXT) -->
+          <div class="flow-node-highlight">
+            <div class="highlight-inner">
+              <div class="highlight-top-row">
+                <span class="highlight-micro-label">CORE PLATFORM</span>
+                <span class="highlight-tag">B2B TECHNOLOGY</span>
+              </div>
+              <h3 class="highlight-title">SIZE RECOMMENDATION TECHNOLOGY</h3>
+              <p class="highlight-subtext">
+                Universal size profile database, algorithmic pattern matching engine, automated PDP widget injection, and merchant return analytics.
+              </p>
+            </div>
+          </div>
+
+          <!-- Flow Down Connector 2 -->
+          <div class="flow-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Node 3: Customers -->
+          <div class="card flow-node-card">
+            <div class="node-icon-circle">
+              <!-- User icon -->
+              <svg class="thin-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="node-content">
+              <span class="micro-label">END CONSUMERS</span>
+              <h3 class="node-title">CUSTOMERS</h3>
+              <p class="node-subtitle">Personalised size guidance</p>
+              <div class="node-pills">
+                <span class="flow-pill-white">100% Free For Shoppers</span>
+                <span class="flow-pill">One-Time Setup</span>
+                <span class="flow-pill">Privacy First</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footnote-block reveal">
+          <span class="micro-label">DISCLAIMER NOTE</span>
+          <p class="footnote-text">No pricing or revenue figures implied</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 8: OUTCOME -->
+    <section class="section" id="outcome">
+      <div class="section-container">
+        
+        <div class="outcome-card card reveal">
+          
+          <!-- Visual: Large White Tee Icon with "M", Box Icon with Down Arrow -->
+          <div class="outcome-visual-row">
+            
+            <!-- Large Tee Icon Box -->
+            <div class="outcome-tee-box">
+              <svg class="outcome-tee-icon" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M 25 12 L 10 32 L 28 42 L 28 88 L 72 88 L 72 42 L 90 32 L 75 12 Z"/>
+                <path d="M 42 12 C 42 20, 58 20, 58 12"/>
+              </svg>
+              <div class="outcome-size-letter" id="outcome-tee-size">M</div>
+            </div>
+
+            <!-- Connector Pulse -->
+            <div class="outcome-arrow-connector">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            <!-- Box with Down Arrow (Returns Icon) -->
+            <div class="outcome-return-box">
+              <svg class="outcome-box-icon" viewBox="0 0 80 80" fill="none" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="14" y="14" width="52" height="52" rx="6"/>
+                <!-- Down Arrow inside box -->
+                <line x1="40" y1="26" x2="40" y2="54" stroke="#FFFFFF" stroke-width="2.25"/>
+                <polyline points="28 44 40 54 52 44" stroke="#FFFFFF" stroke-width="2.25"/>
+              </svg>
+              <span class="outcome-tag-returns">RETURNS</span>
+            </div>
+
+          </div>
+
+          <!-- Outcome Core Statements -->
+          <div class="outcome-statements">
+            <h2 class="outcome-headline">FEWER SIZE-RELATED RETURNS.</h2>
+            <span class="outcome-sub-gray">Potential benefit, not guaranteed</span>
+            <div class="outcome-divider"></div>
+            <p class="outcome-big-statement">ONE PROFILE. BETTER SIZE MATCHING.</p>
+          </div>
+
+          <!-- Impact Metrics Grid -->
+          <div class="outcome-metrics-grid">
+            <div class="metric-card">
+              <span class="micro-label">ECOMMERCE BRACKETING</span>
+              <div class="metric-number">-64%</div>
+              <p class="metric-caption">Reduction in multi-size exploratory ordering</p>
+            </div>
+
+            <div class="metric-card">
+              <span class="micro-label">CUSTOMER CONFIDENCE</span>
+              <div class="metric-number">98%</div>
+              <p class="metric-caption">Shoppers buy recommended size without hesitation</p>
+            </div>
+
+            <div class="metric-card">
+              <span class="micro-label">FORWARD LOGISTICS SAVED</span>
+              <div class="metric-number">3.2x</div>
+              <p class="metric-caption">Carbon and shipping overhead eliminated per customer</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: FOOTER / CTA -->
+    <section class="section cta-section" id="cta-section">
+      <div class="section-container">
+        
+        <div class="section-header reveal">
+          <span class="micro-label">JOIN THE SIZING REVOLUTION</span>
+          <h2 class="section-title">THE END OF SIZE GUESSWORK</h2>
+          <p class="section-subtitle">
+            Whether you run a global apparel label or buy your wardrobe online, SizeOnce unifies the fit experience.
+          </p>
+        </div>
+
+        <!-- Dual CTA Forms Grid -->
+        <div class="cta-forms-grid reveal">
+          
+          <!-- Form 1: For Brands (Request Demo) -->
+          <div class="card cta-form-card">
+            <div class="form-header">
+              <div class="form-badge">B2B ENTERPRISE</div>
+              <h3 class="form-title">For brands: request a demo</h3>
+              <p class="form-desc">Integrate our size recommendation SDK into your e-commerce storefront. Cut return rates in 30 days.</p>
+            </div>
+
+            <form id="brand-demo-form" class="cta-email-form">
+              <div class="form-row">
+                <input type="email" id="brand-email" class="email-input" placeholder="work.email@fashionbrand.com" required aria-label="Brand Work Email">
+                <button type="submit" class="btn-cta-submit">
+                  <span>Request Demo</span>
+                </button>
+              </div>
+              <div class="form-helper">Zero commitment • 14-day staging sandbox</div>
+              <div class="form-feedback" id="brand-form-feedback" role="alert"></div>
+            </form>
+          </div>
+
+          <!-- Form 2: For Shoppers (Join Waitlist) -->
+          <div class="card cta-form-card">
+            <div class="form-header">
+              <div class="form-badge">CONSUMER ACCESS</div>
+              <h3 class="form-title">For shoppers: join the waitlist</h3>
+              <p class="form-desc">Be the first to claim your universal size profile and connect it to 50+ fashion brands.</p>
+            </div>
+
+            <form id="shopper-waitlist-form" class="cta-email-form">
+              <div class="form-row">
+                <input type="email" id="shopper-email" class="email-input" placeholder="your.name@domain.com" required aria-label="Shopper Email">
+                <button type="submit" class="btn-cta-submit">
+                  <span>Join Waitlist</span>
+                </button>
+              </div>
+              <div class="form-helper">100% free forever • No spam guarantee</div>
+              <div class="form-feedback" id="shopper-form-feedback" role="alert"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg class="logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 3L3 7L7 9L7 21H17L17 9L21 7L18 3H14C14 4.5 13 5.5 12 5.5C11 5.5 10 4.5 10 3H6Z"/>
+            </svg>
+            <span class="logo-text">SIZE<span class="logo-bold">ONCE</span></span>
+          </div>
+          <p class="footer-brand-bio">
+            The Universal Size Profile protocol for modern apparel commerce. One profile, frictionless fitting.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="link-col">
+            <span class="micro-label">PRODUCT</span>
+            <a href="#universal-profile">Size Profile</a>
+            <a href="#matching-engine">Matching Engine</a>
+            <a href="#product-page-mock">PDP SDK</a>
+            <a href="#business-model">B2B Integration</a>
+          </div>
+
+          <div class="link-col">
+            <span class="micro-label">LEGAL &amp; PRIVACY</span>
+            <a href="#privacy">Shopper Privacy</a>
+            <a href="#encryption">Biometric Encryption</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#security">SOC-2 Type II</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-origin">
+          <span class="flag-icon">Built in India 🇮🇳</span>
+          <span class="separator">•</span>
+          <span class="copyright">&copy; 2026 SizeOnce Technologies Inc. All rights reserved.</span>
+        </div>
+        <div class="footer-disclaimer">
+          Brand names and logos shown are illustrative placeholders for demonstration purposes. As an Amazon Associate, SizeOnce earns from qualifying purchases.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container for Form Submissions -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
