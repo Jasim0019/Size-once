@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-black text-white antialiased">
 
@@ -34,6 +35,12 @@
       </nav>
 
       <div class="header-actions">
+        <button type="button" class="btn-cloud-sync" id="btn-open-supabase" title="Connect Supabase Database (shaikjasim412@gmail.com)">
+          <svg class="thin-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+          <span id="supabase-pill-status">Cloud Sync</span>
+        </button>
         <a href="#cta-section" class="btn-primary-sm">Get Started</a>
       </div>
     </div>
@@ -1406,6 +1413,44 @@
 
     </div>
   </footer>
+
+  <!-- Supabase Cloud Connection Modal -->
+  <div id="supabase-modal" class="supabase-modal-backdrop" aria-hidden="true">
+    <div class="supabase-modal-card card" role="dialog" aria-labelledby="supabase-modal-title">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="micro-label">DATABASE INTEGRATION</span>
+          <h3 id="supabase-modal-title" class="modal-title">Supabase Cloud Sync</h3>
+          <p class="modal-desc">Connected to <strong>shaikjasim412@gmail.com</strong>. Synchronize universal size profiles, waitlists, and demo requests with your Supabase PostgreSQL database.</p>
+        </div>
+        <button type="button" class="btn-modal-close" id="btn-close-supabase" aria-label="Close modal">✕</button>
+      </div>
+
+      <form id="supabase-config-form" class="supabase-config-form">
+        <div class="form-group">
+          <label for="sb-project-url" class="micro-label">SUPABASE PROJECT URL</label>
+          <input type="url" id="sb-project-url" class="supabase-input" placeholder="https://your-project-ref.supabase.co">
+          <span class="form-tip">Found in Supabase Dashboard &rarr; Project Settings &rarr; API &rarr; Project URL</span>
+        </div>
+
+        <div class="form-group">
+          <label for="sb-anon-key" class="micro-label">SUPABASE ANON / PUBLIC KEY</label>
+          <input type="text" id="sb-anon-key" class="supabase-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+          <span class="form-tip">Found in Project Settings &rarr; API &rarr; Project API keys (anon public)</span>
+        </div>
+
+        <div class="modal-actions-row">
+          <button type="submit" class="btn-primary-sm" id="btn-connect-supabase">Save &amp; Connect</button>
+          <button type="button" class="btn-sync-profile" id="btn-sync-current-profile">Sync Profile Now</button>
+        </div>
+
+        <div class="supabase-schema-note">
+          <span class="micro-label">DATABASE SCHEMA:</span>
+          <p>Execute <code>supabase-schema.sql</code> in your Supabase SQL Editor to initialize <code>user_size_profiles</code>, <code>brand_demo_requests</code>, and <code>shopper_waitlist</code>.</p>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- Toast Notification Container for Form Submissions -->
   <div id="toast-container" class="toast-container" aria-live="polite"></div>

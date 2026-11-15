@@ -10,11 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
     domain: 'amazon.in' // Default Amazon marketplace
   };
 
+  // Supabase Configuration
+  const SUPABASE_CONFIG = {
+    adminEmail: 'shaikjasim412@gmail.com',
+    url: '',
+    anonKey: ''
+  };
+
   // State management
   const state = {
     unit: 'cm', // 'cm' or 'in'
     amazonTag: 'sizeonce-20',
     amazonDomain: 'amazon.in',
+    supabaseUrl: '',
+    supabaseAnonKey: '',
+    supabaseEmail: 'shaikjasim412@gmail.com',
     measurements: {
       height: 170, // cm
       chest: 96,   // cm
@@ -941,19 +951,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
-   * CTA Forms Submission Handling
+   * CTA Forms Submission Handling & Supabase Database Sync
    */
   const brandForm = document.getElementById('brand-demo-form');
   const brandFeedback = document.getElementById('brand-form-feedback');
   if (brandForm) {
-    brandForm.addEventListener('submit', (e) => {
+    brandForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = document.getElementById('brand-email').value;
+      const email = document.getElementById('brand-email').value.trim();
       if (email) {
         brandFeedback.innerHTML = `✓ Request received for <strong>${escapeHtml(email)}</strong>. Our enterprise sizing integration team will reach out within 4 business hours.`;
         brandFeedback.className = 'form-feedback success';
         brandForm.reset();
-        showToast('Demo request registered successfully');
+
+        // Write directly to Supabase if connected
+        if (supabaseClient) {
+          try {
+            await supabaseClient.from('brand_demo_requests').insert([{ work_email: email, notes: 'B2B Demo Request' }]);
+            showToast('Demo request saved to Supabase');
+          } catch (err) {
+            console.warn('Supabase lead record error:', err);
+            showToast('Demo request registered locally');
+          }
+        } else {
+          showToast('Demo request registered successfully');
+        }
       }
     });
   }
@@ -961,14 +983,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const shopperForm = document.getElementById('shopper-waitlist-form');
   const shopperFeedback = document.getElementById('shopper-form-feedback');
   if (shopperForm) {
-    shopperForm.addEventListener('submit', (e) => {
+    shopperForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = document.getElementById('shopper-email').value;
+      const email = document.getElementById('shopper-email').value.trim();
       if (email) {
         shopperFeedback.innerHTML = `✓ You're on the early access list! We've reserved your anonymous universal profile ID for <strong>${escapeHtml(email)}</strong>.`;
         shopperFeedback.className = 'form-feedback success';
         shopperForm.reset();
-        showToast('Joined SizeOnce waitlist');
+
+        // Write directly to Supabase if connected
+        if (supabaseClient) {
+          try {
+            await supabaseClient.from('shopper_waitlist').insert([{ email }]);
+            showToast('Waitlist joined & saved to Supabase');
+          } catch (err) {
+            console.warn('Supabase waitlist record error:', err);
+            showToast('Joined SizeOnce waitlist');
+          }
+        } else {
+          showToast('Joined SizeOnce waitlist');
+        }
       }
     });
   }
@@ -1061,9 +1095,144 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Supabase Client State & Initialization
+  let supabaseClient = null;
+
+  function initSupabase() {
+    const url = state.supabaseUrl || localStorage.getItem('sizeonce_sb_url') || '';
+    const key = state.supabaseAnonKey || localStorage.getItem('sizeonce_sb_key') || '';
+    const email = state.supabaseEmail || localStorage.getItem('sizeonce_sb_email') || 'shaikjasim412@gmail.com';
+
+    state.supabaseUrl = url;
+    state.supabaseAnonKey = key;
+    state.supabaseEmail = email;
+
+    const sbUrlInput = document.getElementById('sb-project-url');
+    const sbKeyInput = document.getElementById('sb-anon-key');
+    if (sbUrlInput) sbUrlInput.value = url;
+    if (sbKeyInput) sbKeyInput.value = key;
+
+    if (url && key && window.supabase) {
+      try {
+        supabaseClient = window.supabase.createClient(url, key);
+        updateSupabaseUI(true);
+        return supabaseClient;
+      } catch (err) {
+        console.warn('Supabase initialization warning:', err);
+      }
+    }
+    updateSupabaseUI(false);
+    return null;
+  }
+
+  function updateSupabaseUI(connected) {
+    const pill = document.getElementById('supabase-pill-status');
+    const btn = document.getElementById('btn-open-supabase');
+    if (pill && btn) {
+      if (connected) {
+        pill.textContent = 'Cloud Active 🟢';
+        btn.classList.add('is-connected');
+        btn.title = `Connected to Supabase (${state.supabaseEmail})`;
+      } else {
+        pill.textContent = 'Cloud Sync';
+        btn.classList.remove('is-connected');
+        btn.title = `Connect Supabase Project (${state.supabaseEmail})`;
+      }
+    }
+  }
+
+  async function syncProfileToSupabase() {
+    if (!supabaseClient) {
+      showToast('Please enter your Supabase Project URL and Anon Key first');
+      openSupabaseModal();
+      return false;
+    }
+
+    try {
+      const payload = {
+        email: state.supabaseEmail,
+        height: state.measurements.height,
+        chest: state.measurements.chest,
+        waist: state.measurements.waist,
+        shoulders: state.measurements.shoulders,
+        unit: state.unit,
+        connected_brands: state.connectedBrands.map(b => b.name),
+        updated_at: new Date().toISOString()
+      };
+
+      const { data, error } = await supabaseClient
+        .from('user_size_profiles')
+        .upsert(payload, { onConflict: 'email' });
+
+      if (error) throw error;
+      showToast(`Synced profile to Supabase database for ${state.supabaseEmail}`);
+      return true;
+    } catch (err) {
+      console.error('Supabase profile sync error:', err);
+      showToast(`Supabase sync notice: ${err.message || 'Check tables & RLS'}`);
+      return false;
+    }
+  }
+
+  // Supabase Modal UI Controls
+  const sbModal = document.getElementById('supabase-modal');
+  const btnOpenSb = document.getElementById('btn-open-supabase');
+  const btnCloseSb = document.getElementById('btn-close-supabase');
+  const sbConfigForm = document.getElementById('supabase-config-form');
+  const btnSyncProfile = document.getElementById('btn-sync-current-profile');
+
+  function openSupabaseModal() {
+    if (sbModal) {
+      sbModal.classList.add('is-open');
+      sbModal.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  function closeSupabaseModal() {
+    if (sbModal) {
+      sbModal.classList.remove('is-open');
+      sbModal.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  if (btnOpenSb) btnOpenSb.addEventListener('click', openSupabaseModal);
+  if (btnCloseSb) btnCloseSb.addEventListener('click', closeSupabaseModal);
+  if (sbModal) {
+    sbModal.addEventListener('click', (e) => {
+      if (e.target === sbModal) closeSupabaseModal();
+    });
+  }
+
+  if (sbConfigForm) {
+    sbConfigForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const url = document.getElementById('sb-project-url').value.trim();
+      const key = document.getElementById('sb-anon-key').value.trim();
+
+      state.supabaseUrl = url;
+      state.supabaseAnonKey = key;
+      try {
+        localStorage.setItem('sizeonce_sb_url', url);
+        localStorage.setItem('sizeonce_sb_key', key);
+      } catch (err) {}
+
+      initSupabase();
+      closeSupabaseModal();
+      showToast('Saved Supabase credentials. Syncing profile...');
+      syncProfileToSupabase();
+    });
+  }
+
+  if (btnSyncProfile) {
+    btnSyncProfile.addEventListener('click', () => {
+      syncProfileToSupabase();
+    });
+  }
+
   // Load persisted brands & affiliate settings from localStorage
   loadBrands();
   updateAmazonConfigUI();
+  initSupabase();
 
   // Initial calculation and brand cards render
   updateAllOutputs();

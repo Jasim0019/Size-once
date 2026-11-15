@@ -2776,6 +2776,180 @@ button, input {
   font-weight: 500;
 }
 
+/* Header Cloud Sync Button */
+.btn-cloud-sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-cloud-sync:hover {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-cloud-sync.is-connected {
+  border-color: #10B981;
+  color: #10B981;
+}
+
+.btn-cloud-sync.is-connected .thin-icon {
+  stroke: #10B981;
+}
+
+/* Supabase Modal */
+.supabase-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.supabase-modal-backdrop.is-open {
+  display: flex;
+}
+
+.supabase-modal-card {
+  max-width: 540px;
+  width: 100%;
+  padding: 32px;
+  background: #0E0E0E;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.modal-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-title {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.modal-desc strong {
+  color: #FFFFFF;
+}
+
+.btn-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.btn-modal-close:hover {
+  color: #FFFFFF;
+}
+
+.supabase-config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.supabase-input {
+  width: 100%;
+  background: #000000;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  outline: none;
+  font-family: monospace;
+  transition: border-color var(--transition-fast);
+}
+
+.supabase-input:focus {
+  border-color: #FFFFFF;
+}
+
+.form-tip {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.modal-actions-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-sync-profile {
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-default);
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-sync-profile:hover {
+  border-color: #FFFFFF;
+  background: #181818;
+}
+
+.supabase-schema-note {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+  margin-top: 6px;
+}
+
+.supabase-schema-note p {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.supabase-schema-note code {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
 /* Toast Container */
 .toast-container {
   position: fixed;
