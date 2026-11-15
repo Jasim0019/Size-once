@@ -2,9 +2,8 @@
   "name": "sizeonce",
   "version": "1.0.0",
   "description": "SizeOnce — Universal Size Profile marketing website and interactive sizing engine demo",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "dev": "node server.js",
     "test": "node test-check.js"
   },
   "keywords": [
